@@ -3,6 +3,8 @@ package ru.mail.urbanovichalexandr.ProgectForInstinctools;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class App {
@@ -14,23 +16,28 @@ public class App {
 		String fileName =  scanner.nextLine();
 		System.out.println(fileName);
 //		scanner.close();
-		String contents = readUsingBufferedReader(fileName);
+		String contents = ReadFile.readUsingBufferedReader(fileName);
 		System.out.println(contents);
-	}
-		
-	private static String readUsingBufferedReader(String fileName) throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(fileName));
-		String line = null;
-		StringBuilder stringBuilder = new StringBuilder();
-		String ls = System.getProperty("line.separator");
-		while((line = reader.readLine()) != null) {
-				stringBuilder.append(line);
-				stringBuilder.append(ls);
-		}
-		stringBuilder.deleteCharAt(stringBuilder.length()-1);
-		return stringBuilder.toString();
-	}
 	
+	
+		String [] words = ReadFile.readUsingBufferedReader(fileName).toLowerCase().replaceAll("[-.?!)(,:]", "").split("\\s");
+		
+		Map<String, Integer> counterMap = new HashMap<>();
+        for (String word : words) {
+            if(!word.isEmpty()) {
+                Integer count = counterMap.get(word);
+                if(count == null) {
+                    count = 0;
+                }
+                counterMap.put(word, ++count);
+            }
+        }
+ 
+        for(String word : counterMap.keySet()) {
+            System.out.println(word + ": " + counterMap.get(word));
+		
+	}
+}
 }
 
 
