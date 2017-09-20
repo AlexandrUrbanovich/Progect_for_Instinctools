@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ReadFile {
-		
+	
+// читаем файл по указанному пути
 	public static String readUsingBufferedReader(String fileName) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(fileName));
 		String line = null;

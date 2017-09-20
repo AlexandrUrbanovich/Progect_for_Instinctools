@@ -11,6 +11,8 @@ public class App {
 
 	public static void main(String[] args) throws IOException {
 
+		
+// запрашиваем у пользователя путь к файлу, читаем его и передаем функии для чтения файла
 		Scanner scanner = new Scanner (System.in);
 		System.out.println("Enter file name.");
 		String fileName =  scanner.nextLine();
@@ -19,9 +21,11 @@ public class App {
 		String contents = ReadFile.readUsingBufferedReader(fileName);
 		System.out.println(contents);
 	
-	
+//удаляем из текста все возможные символы кроме слов	
 		String [] words = ReadFile.readUsingBufferedReader(fileName).toLowerCase().replaceAll("[-.?!)(,:]", "").split("\\s");
+
 		
+//заносим каждое слово в коллекцию HashMap, а в ключе считаем количество повторений в тексте
 		Map<String, Integer> counterMap = new HashMap<>();
         for (String word : words) {
             if(!word.isEmpty()) {
