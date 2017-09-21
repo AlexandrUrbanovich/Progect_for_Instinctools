@@ -25,23 +25,10 @@ public class App {
 		String [] words = ReadFile.readUsingBufferedReader(fileName).toLowerCase().replaceAll("[-.?!)(,:]", "").split("\\s");
 
 		
-//заносим каждое слово в коллекцию HashMap, а в ключе считаем количество повторений в тексте
-		Map<String, Integer> counterMap = new HashMap<>();
-        for (String word : words) {
-            if(!word.isEmpty()) {
-                Integer count = counterMap.get(word);
-                if(count == null) {
-                    count = 0;
-                }
-                counterMap.put(word, ++count);
-            }
-        }
- 
-        for(String word : counterMap.keySet()) {
-            System.out.println(word + ": " + counterMap.get(word));
+//вызываем метод подсчета частоты встречаемости слова
+		contents = CountWord.count(words);
 		
 	}
-}
 }
 
 
