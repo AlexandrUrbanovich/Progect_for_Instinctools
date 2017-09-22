@@ -3,8 +3,6 @@ package ru.mail.urbanovichalexandr.ProgectForInstinctools;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
-
 public class ReadFile {
 	
 // читаем файл по указанному пути
@@ -19,6 +17,6 @@ public class ReadFile {
 		}
 		stringBuilder.deleteCharAt(stringBuilder.length()-1);
 		return stringBuilder.toString();
-	}
 
+	}
 }
