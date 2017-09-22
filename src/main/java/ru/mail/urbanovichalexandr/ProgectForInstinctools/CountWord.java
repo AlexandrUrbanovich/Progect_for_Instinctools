@@ -1,13 +1,13 @@
 package ru.mail.urbanovichalexandr.ProgectForInstinctools;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CountWord {
 
 	//заносим каждое слово в коллекцию HashMap, а в значении считаем количество повторений в тексте
-	public static String count(String[] words) {
-		String pronouns = "pronouns.txt";
+	public static String count(List<String> words) {
 
 		Map<String, Integer> counterMap = new HashMap<>();
 		for (String word : words) {

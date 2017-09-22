@@ -1,6 +1,8 @@
 package ru.mail.urbanovichalexandr.ProgectForInstinctools;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -25,8 +27,18 @@ public class App {
 		
 
 //вызываем метод подсчета частоты встречаемости слова
-		contents = CountWord.count(words);
+//		contents = CountWord.count(words);
 		
+		List<String> list1 = new ArrayList<>(new ReadFile(fileName, "\\W+"));
+//		System.out.println(list1);
+		
+		List<String> list2 = new ArrayList<>(new ReadFile(pronouns, "\\W+"));
+		System.out.println(list2);
+		
+		list1.removeAll(list2);
+		System.out.println(list1);
+		
+		contents = CountWord.count(list1);
 	}
 }
 
