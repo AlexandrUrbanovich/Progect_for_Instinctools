@@ -16,7 +16,7 @@ public class ReadFile {
 				stringBuilder.append(ls);
 		}
 		stringBuilder.deleteCharAt(stringBuilder.length()-1);
+		
 		return stringBuilder.toString();
-
 	}
 }

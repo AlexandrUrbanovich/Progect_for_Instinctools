@@ -13,17 +13,17 @@ public class App {
 		Scanner scanner = new Scanner (System.in);
 		System.out.println("Enter file name.");
 		String fileName =  scanner.nextLine();
-		System.out.println(fileName);
 //scanner.close();
 		String contents = ReadFile.readUsingBufferedReader(fileName);
 		String contentsPronouns = ReadFile.readUsingBufferedReader(pronouns);
-		System.out.println(contents);
+		System.out.println(contents);	
 		System.out.println(contentsPronouns);
-	
+		
 //удаляем из текста все возможные символы кроме слов	
 		String [] words = ReadFile.readUsingBufferedReader(fileName).toLowerCase().replaceAll("[-.?!)(,:]", "").split("\\s");
-
 		
+		
+
 //вызываем метод подсчета частоты встречаемости слова
 		contents = CountWord.count(words);
 		

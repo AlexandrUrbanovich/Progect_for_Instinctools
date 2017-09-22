@@ -4,9 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CountWord {
-	
-//заносим каждое слово в коллекцию HashMap, а в значении считаем количество повторений в тексте
+
+	//заносим каждое слово в коллекцию HashMap, а в значении считаем количество повторений в тексте
 	public static String count(String[] words) {
+		String pronouns = "pronouns.txt";
+
 		Map<String, Integer> counterMap = new HashMap<>();
 		for (String word : words) {
 			if(!word.isEmpty()) {
