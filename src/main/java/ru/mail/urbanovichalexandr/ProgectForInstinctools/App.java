@@ -22,7 +22,7 @@ public class App {
 //		System.out.println(contentsPronouns);
 		
 //удаляем из текста все возможные символы кроме слов	
-		String [] words = ReadFile.readUsingBufferedReader(fileName).toLowerCase().replaceAll("[-.?!)(,:]", "").split("\\s");
+//		String [] words = ReadFile.readUsingBufferedReader(fileName).toLowerCase().replaceAll("[-.?!)(,:]", "").split("\\s");
 		
 		
 
@@ -45,8 +45,14 @@ public class App {
 		System.out.println("Enter file name.");
 		String fileName1 =  scanner.nextLine();
 		String brackets = ReadFile.readUsingBufferedReader(fileName1);
-		System.out.println(brackets);
-		System.out.println(Brackets.parsing(brackets));
+//		System.out.println(brackets);
+		Boolean boll = Brackets.parsing(brackets);
+		
+		if((boll == true)) {
+			System.out.println("correct");
+		}else {
+			System.out.println("incorrect");
+		}
 		
 		
 	}
