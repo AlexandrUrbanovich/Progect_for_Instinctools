@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class ReadFile extends ArrayList<String> {
 
-	// читаем файл по указанному пути
+// читаем файл по указанному пути
 	public static String readUsingBufferedReader(String fileName) throws FileNotFoundException {
 
 		StringBuilder stringBuilder = new StringBuilder();
@@ -28,11 +28,12 @@ public class ReadFile extends ArrayList<String> {
 		}catch(IOException e){
 			throw new RuntimeException(e);
 		}
-//		stringBuilder.deleteCharAt(stringBuilder.length()-1);
+		stringBuilder.deleteCharAt(stringBuilder.length()-1);
 
 		return stringBuilder.toString();
 	}
 	
+//читаем файл построчно
 	public ReadFile(String fileName, String splitter) throws FileNotFoundException {
 		super(Arrays.asList(readUsingBufferedReader(fileName).split(splitter)));
 		if(get(0).equals("")) remove(0);

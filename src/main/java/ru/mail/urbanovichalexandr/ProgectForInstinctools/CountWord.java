@@ -20,6 +20,7 @@ public class CountWord {
 			}
 		}
 
+//сортируем коллекцию по количеству повторений слов в тексте
 		counterMap.entrySet().stream().sorted((Map.Entry.<String, Integer>comparingByValue()).reversed()).forEach(System.out::println);
 
 		return null;
