@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class CountWord {
 
-	//заносим каждое слово в коллекцию HashMap, а в значении считаем количество повторений в тексте
+//	заносим каждое слово в коллекцию HashMap, а в значении считаем количество повторений в тексте
 	public static String count(List<String> words) {
 
 		Map<String, Integer> counterMap = new HashMap<>();
@@ -24,9 +24,6 @@ public class CountWord {
 			}
 		}
 
-
-//counterMap.entrySet().stream().sorted((Entry.<String, Integer>comparingByValue()).reversed()).forEach(System.out::println);
-	
 //сортируем коллекцию по количеству повторений слов в тексте		
 		Map<String, Integer> sortedMap = sortByValue(counterMap);
 		printMap(sortedMap);

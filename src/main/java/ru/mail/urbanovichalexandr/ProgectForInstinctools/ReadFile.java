@@ -39,5 +39,4 @@ public class ReadFile extends ArrayList<String> {
 		if(get(0).equals("")) remove(0);
 	}
 	
-	
 }
